@@ -5,7 +5,7 @@ const offlineFallbackPage = "/";
 const CACHE_NAME = "dank-cache";
 
 // Add whichever assets you want to pre-cache here:
-const PRECACHE_ASSETS = ["/static/"];
+const PRECACHE_ASSETS = ["/"];
 
 // Listener for the install event - pre-caches our assets list on service worker install.
 self.addEventListener("install", (event) => {
