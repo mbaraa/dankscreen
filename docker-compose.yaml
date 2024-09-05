@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  webpage:
+    container_name: dankscreen-website
+    image: dankscreen-website
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "20257:8989"
