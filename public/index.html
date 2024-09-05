@@ -12,6 +12,13 @@
       name="keywords"
       content="dank,screen,dankscreen,capture,usb,browser,camera"
     />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="stylesheet" type="text/css" href="/style.css" />
   </head>
   <body>
@@ -77,5 +84,24 @@
       </p>
     </footer>
     <script src="/script.js"></script>
+    <script type="module">
+      function registerServiceWorkers() {
+        if (!("serviceWorker" in navigator)) {
+          console.error("Browser doesn't support service workers");
+          return;
+        }
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/service-worker.js")
+            .then((reg) => {
+              console.log("Service Worker Registered", reg);
+            })
+            .catch((err) => {
+              console.log("Service Worker Registration failed:", err);
+            });
+        });
+      }
+      registerServiceWorkers();
+    </script>
   </body>
 </html>
